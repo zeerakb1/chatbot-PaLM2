@@ -1,4 +1,4 @@
-import ChatBot from "./Chatbot";
+import ChatBot from "./components/Chatbot";
 
 function App() {
   // const [message, setMessage] = useState([]);

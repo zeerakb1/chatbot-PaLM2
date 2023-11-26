@@ -5,14 +5,10 @@ const ChatBot = () => {
     const [messages, setMessages] = useState([]);
     const [text, setText] = useState("");
 
-    console.log(messages);
-
     const getResponse = async (e) => {
         e.preventDefault();
         const response = await fetch(`http://localhost:8000/prompt/${text}`);
         const data = await response.json();
-
-        console.log(data);
 
         setMessages([
         ...messages,
@@ -26,6 +22,7 @@ const ChatBot = () => {
 
     return (
         <div className="chatbot-container">
+            <div className="chat-header">PaLM 2 Chatbot</div>
             <div className="chat-window">
                 {messages.map((message, index) => (
                     <React.Fragment key={index}>
